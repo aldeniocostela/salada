@@ -1,5 +1,5 @@
 /* style.css */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;900&display=swap');
+/* Fonte DM Sans carregada via <link> no index.html (evita @import bloqueante no mobile) */
 
 :root {
     --primary: #1d3029; /* verde escuro */
@@ -195,7 +195,7 @@ section {
 
 /* 1. HERO */
 .logo {
-  max-width: 220px;
+  max-width: 260px;
   height: auto;
   display: block;
   margin: 0 auto 32px;
@@ -208,8 +208,11 @@ section {
     color: #444;
 }
 .hero-img {
-    max-width: 100%;
-    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 14px 34px rgba(29, 48, 41, 0.18);
     margin-bottom: 30px;
 }
 .trust-bar {
@@ -260,6 +263,7 @@ section {
     margin: 0 auto 30px auto;
 }
 .mockup-img {
+    width: 100%;
     max-width: 500px;
     margin-bottom: 30px;
 }
@@ -405,6 +409,7 @@ section {
     box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
 .mockup-oferta {
+    width: 100%;
     max-width: 300px;
 }
 .check-list {
@@ -489,6 +494,28 @@ details p {
 }
 .logo-footer { max-width: 160px; opacity: 1; }
 .footer p { color: #fff; opacity: 0.7; font-size: 0.85rem; }
+
+/* === Ajustes finos para CELULAR (foco em conversão) === */
+@media (max-width: 767px) {
+    /* Espaçamentos mais justos: menos rolagem morta */
+    section { padding: 44px 0; }
+    .oferta { padding: 48px 0; }
+    .oferta-card { padding: 26px 20px; }
+    .learn-box { padding: 24px 20px; }
+    .card { padding: 24px; }
+
+    /* CTAs grandes, centralizados e fáceis de tocar (full-width) */
+    .cta-button {
+        display: block;
+        width: 100%;
+        max-width: 420px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Preço cabe melhor em telas estreitas */
+    .price-big { font-size: 3rem; }
+}
 
 /* REsponsividade Mobile/Tablet até Desktop */
 @media (min-width: 768px) {
